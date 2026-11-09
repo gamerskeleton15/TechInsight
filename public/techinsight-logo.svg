@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Gradients matching the site's accent colors -->
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9F43" />
+      <stop offset="100%" stop-color="#C85A17" />
+    </linearGradient>
+
+    <linearGradient id="brightAmber" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E65100" />
+      <stop offset="100%" stop-color="#FFB74D" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A3B50" />
+      <stop offset="100%" stop-color="#141E28" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="500" rx="40" fill="#0B0F17" />
+
+  <g transform="translate(250, 250)">
+    <!-- Outer Circuit / Eye Contour (Top) -->
+    <path d="M -160 0 C -100 -120 100 -120 160 0" fill="none" stroke="url(#amberGrad)" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Outer Circuit / Eye Contour (Bottom) -->
+    <path d="M -160 0 C -100 120 100 120 160 0" fill="none" stroke="url(#amberGrad)" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Secondary Tech Circuit Traces (Top Left) -->
+    <path d="M -120 -25 C -80 -80 0 -80 40 -60" fill="none" stroke="url(#brightAmber)" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Secondary Tech Circuit Traces (Bottom Right) -->
+    <path d="M 120 25 C 80 80 0 80 -40 60" fill="none" stroke="url(#brightAmber)" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Inner Shield / Aperture -->
+    <path d="M -80 0 C -40 -50 40 -50 80 0 C 40 50 -40 50 -80 0 Z" fill="url(#accentGrad)" stroke="url(#amberGrad)" stroke-width="4" />
+
+    <!-- Central Lens / Glowing Core -->
+    <circle cx="0" cy="0" r="32" fill="url(#brightAmber)" filter="url(#glow)" />
+    <circle cx="0" cy="0" r="16" fill="#0B0F17" />
+    <circle cx="-6" cy="-6" r="5" fill="#FFFFFF" opacity="0.8" />
+
+    <!-- Node Dots (Tech Accents) -->
+    <circle cx="-160" cy="0" r="10" fill="#FF9F43" />
+    <circle cx="160" cy="0" r="10" fill="#FF9F43" />
+    <circle cx="40" cy="-60" r="6" fill="#FFB74D" />
+    <circle cx="-40" cy="60" r="6" fill="#FFB74D" />
+  </g>
+</svg>
